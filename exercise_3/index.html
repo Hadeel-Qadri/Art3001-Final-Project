@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based Collage</title>
+
+    <style>
+
+         body{
+            background-color: black;
+            margin: 10px;
+            
+        }
+
+        .container{
+            position: relative;
+            width:100%;
+         
+        }
+        #mainImage{
+           
+            width: 90%;
+            margin-left: 7%;
+            cursor: pointer;
+            
+        }
+
+
+        .flex-container{
+            display: flex;
+           
+           
+        }
+
+        .center_middle{
+            margin-left: 600px;
+        }
+        .flex-container div{
+            display: none;
+            padding: 20px;
+            background-color: aqua;
+            width: 20%;
+           
+            border: 5px solid black;
+            flex-wrap: wrap;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+            color: orange;
+            cursor: zoom-in;
+
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        .glowGreen{
+            
+            box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow, 0 0 60px yellow, 0 0 70px yellow;
+        }
+        @keyframes glow  {
+        from {
+         box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            to {
+        box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+         }
+
+        @keyframes glow {
+        from {
+         box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            to {
+        box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+         }
+
+        .animal_size{
+            width: 700px;
+        }
+
+        
+        .flex-container div:hover{
+            width: 50%;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="circle effect.gif" alt="Cicle Image" id="mainImage" onclick="displayfuntion()">
+    </div>
+
+    <div class="flex-container">
+        <div><img src="images/first.jpg" alt="animal" class="animal_size"></div>
+        <div><img src="images/second.jpg" alt="animal" class="animal_size"></div>
+        <div> <img src="images/third.jpg" alt="animal" class="animal_size"></div>
+        <div><img src="images/eigth.jpg" alt="animal" class="animal_size"></div>
+        <div><img src="images/16.jpg" alt="animal" class="animal_size"></div>
+        
+
+      </div>
+
+    <div class="flex-container center_middle">
+        <div><img src="images/ninth.jpg" alt="animal"></div>
+        <div><img src="images/fifth.jpg" alt="animal" class="animal_size "></div>
+        <div><img src="images/sixth.jpg" alt="animal" class="animal_size glowGreen" onmouseover="displayAudio()"></div>
+        <div><img src="images/13.jpg" alt="animal" class="animal_size "></div>
+        
+    </div>
+
+
+    <div class="flex-container">
+        <div><img src="images/12.jpg" alt="animal" class="animal_size"></div>
+        <div><img src="images/eleventh.avif" alt="animal" class="animal_size"></div>
+        <div><img src="images/14.jpg" alt="animal" class="animal_size"></div>
+        <div><img src="images/15.jpg" alt="animal" class="animal_size"></div>
+        <div><img src="images/17.jpg" alt="animal" class="animal_size"></div>
+        
+    </div>
+
+   
+<script>
+    function displayfuntion(){
+       document.getElementById('mainImage').style.display = "none"
+
+       let box_images = document.querySelectorAll('.flex-container div')
+
+       for (let i=0; i<box_images.length;i++){
+            if(getComputedStyle(box_images[i]).display === 'none'){
+                box_images[i].style.display ='block'
+            }
+       }
+    }
+
+    function displayAudio() {
+        var audioElement = document.createElement("audio");
+    audioElement.controls = true;
+    audioElement.autoplay = true;
+    audioElement.src = "cardinal.mp3";
+
+    var downloadLink = document.createElement("a");
+    downloadLink.href = "cardinal.mp3";
+    downloadLink.textContent = "Download audio";
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(downloadLink);
+
+
+}
+</script>
+</body>
+</html>

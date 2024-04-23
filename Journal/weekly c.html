@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly c</title>
+
+    <style>
+
+        .start_btn{
+            align-items: center;
+            width: 20%;
+            height: 40%;
+            font-size: 20px;
+            color: blueviolet;
+            margin-left: 40%;
+        }
+
+        .start_btn:hover{
+            width: 30%;
+            height: 70%;
+            cursor: pointer;
+        }
+
+        div {
+            margin: 20px;
+            padding: 20px;
+            overflow: scroll;
+            background-color: brown;
+            color: white;
+            }
+
+        p{
+            font-size: 20px;
+            display: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+<button class="start_btn" type="button">Click Here</button>
+
+<div>
+    <p class="par">I find great satisfaction in the strides I've made within this course, reveling in the wealth of knowledge acquired. I am hoping for more exercises to go over 
+        in class to give me opportunity to further refine my skills during my free time. 
+        With the flexibility on my end, I am eager to delve deeper into assignments, solidifying my understanding and mastery of the material.</p>
+
+    <p class="par">Moreover, I express a keen interest in the inclusion of the JQuery framework in our curriculum. Recognizing its potential to simplify JavaScript coding not only 
+        for myself but also for my peers, I believe its integration would be immensely beneficial. The meticulous examination and elucidation of examples on Git have proven 
+        invaluable, unraveling the intricacies of CSS, HTML, and JavaScript with clarity and precision.</p>
+        
+    <p class="par">My overarching objective is to attain an intermediate level in JavaScript by the culmination of this course. Despite the early morning class schedule, I am 
+        resolute in my commitment to extracting maximum value, determined to leave with a wealth of knowledge surpassing my initial expectations.</p>
+
+    <p class="par">Additionally, the articles selected for our discussions have been a source of immense satisfaction. As a CIS major with a predominant focus on design and code, 
+        this class has provided a welcomed departure, delving into the historical context behind our subject matter. It's a refreshing perspective, enriching my understanding beyond
+         the technical facets of our studies.</p>
+
+    <p class="par">I am also excited about the prospect of learning more about the reasoning and methodologies behind the development practices we are engaging with. 
+        Understanding not just the 'how' but the 'why' has significantly enhanced my appreciation for the intricacies of web development, offering a holistic perspective that 
+        goes beyond mere coding.</p>
+
+    
+
+</div>
+    <script>
+
+       let start_btn =  document.querySelector(".start_btn");
+
+       start_btn.onclick=function (){
+        
+        let par = document.querySelectorAll('p');
+
+        for(let i=0; i<par.length;i++){
+       
+            
+            if(par[i].style.display=='none'){
+                par[i].style.display = 'block'
+            }else{
+                par[i].style.display = 'none'
+            }
+        }
+       }
+
+
+
+    </script>
+</body>
+</html>
